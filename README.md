@@ -1,4 +1,4 @@
-#Propawhat
+# Propawhat
 
 We the people of the world have a message to the Russian nation.
 A nation that is to pay a huge price because of the shameful decision of the dictator Putin to attack an independent Ukraine by armed forces. The joint action of all the states of the free world, as a response to Russia’s aggression, will lead to the collapse of the entire country.
@@ -26,7 +26,7 @@ Log into Whatsapp Web in your primary browser: [Whatsapp Web](https://web.whatsa
 `python main.py`
 
 ## Install on Windows
-Untested
+Untested - contributions welcomed
 
 ## Configuration
 `config.json` allows you to configure the paramters of the script
