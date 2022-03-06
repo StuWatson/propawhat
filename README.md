@@ -13,6 +13,8 @@ It uses pywhatkit to open Whatsapp Web in the browser, automatically populate th
 Let them know the truth. Let them know the power of the free world!
 
 ## Install on ubuntu
+Python Version: 3.8
+
 Not mandatory, but best to use a [Python Virtual Environment](https://docs.python.org/3.8/library/venv.html)
 
 You need [tkinter](https://docs.python.org/3/library/tkinter.html)
