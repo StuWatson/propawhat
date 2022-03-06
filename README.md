@@ -5,7 +5,7 @@ However, nearly 150 million Russians do not know the truth about the causes or c
 
 It is possible for each of us to convey a direct message to the inhabitants of this enslaved country.
 
-This tool allows you to send text messages from your phones directly to randomly selected Russians, using a database 
+This tool allows you to automatically send messages from your PC via WhatsappWeb directly to randomly selected Russians, using an API 
 provided by [squad303](https://twitter.com/squad3o3).
 
 Let them know the truth. Let them know the power of the free world!
