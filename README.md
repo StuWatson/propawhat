@@ -1,4 +1,3 @@
-# NOT CURRENT WORKING DUE TO CLOUDFLARE BLOCKING NON HUMAN REQUESTS TO THE DATABASE - INVESTIGATING POSSIBLE WORKAROUNDS
 # Propawhat
 
 We the people of the world have a message to the Russian nation.
@@ -9,6 +8,7 @@ However, nearly 150 million Russians do not know the truth about the causes or c
 It is possible for each of us to convey a direct message to the inhabitants of this enslaved country.
 
 This is a script that makes use of [squad303](https://twitter.com/squad3o3)'s api for retrieving randomly selected Russian phone numbers. 
+It used Selenium to retrieve the phone numbers.
 It uses pywhatkit to open Whatsapp Web in the browser, automatically populate the recipient and message and then send the message
 
 Let them know the truth. Let them know the power of the free world!
