@@ -1,3 +1,4 @@
+# NOT CURRENT WORKING DUE TO CLOUDFLARE BLOCKING NON HUMAN REQUESTS TO THE DATABASE - INVESTIGATING POSSIBLE WORKAROUNDS
 # Propawhat
 
 We the people of the world have a message to the Russian nation.
