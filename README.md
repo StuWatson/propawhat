@@ -19,6 +19,9 @@ Not mandatory, but best to use a [Python Virtual Environment](https://docs.pytho
 
 You need [tkinter](https://docs.python.org/3/library/tkinter.html)
 
+You need [Selenium Chromedriver](https://tecadmin.net/setup-selenium-chromedriver-on-ubuntu/). Only up to step 3 
+(SeleniumServer not required)
+
 `sudo apt-get install python3-tk python3-dev`
 
 `pip install -r requirements.txt`
@@ -32,11 +35,13 @@ Untested - contributions welcomed
 
 ## Configuration
 `config.json` allows you to configure the paramters of the script
-- `api` is the url from which to retrieve the phone numbers
+- `url` is the url from which to retrieve the phone numbers
 - `messages` is a list of message content texts that are chosen at random for each message
 - `wait_time` is how long to wait before sending message after opening Whatsapp Web (random +- 2s)
 - `tab_close` boolean, whether or not to close the tab after sending
 - `close_time` how long to wait after sending before closing the tab (random +- 2s)
+- `number_refresh_wait` how long to wait after clicking refresh number. You may have to increase this during high traffic/DDoS
+- `page_load_wait_time` how long to wait for CloudFlare bot detection when first hitting numbers web page
 
 
 ## Current Limitations - 
