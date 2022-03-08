@@ -20,10 +20,10 @@ Not mandatory, but best to use a [Python Virtual Environment](https://docs.pytho
 
 You need [tkinter](https://docs.python.org/3/library/tkinter.html)
 
+`sudo apt-get install python3-tk python3-dev`
+
 You need [Selenium Chromedriver](https://tecadmin.net/setup-selenium-chromedriver-on-ubuntu/). Only up to step 3 
 (SeleniumServer not required)
-
-`sudo apt-get install python3-tk python3-dev`
 
 `pip install -r requirements.txt`
 
