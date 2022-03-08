@@ -34,6 +34,11 @@ Log into Whatsapp Web in your primary browser: [Whatsapp Web](https://web.whatsa
 ## Install on Windows
 Untested - contributions welcomed
 
+## Current Limitations/Notes - 
+- Browser window must be full screen and can't be run in the background
+- Your Whatsapp account may be banned after some hours of use, so best to use a virtual phone number/e sim or only work with small batches of varying message content
+- Would be better to have this packaged for non technical users
+
 ## Configuration
 `config.json` allows you to configure the paramters of the script
 - `url` is the url from which to retrieve the phone numbers
@@ -45,7 +50,5 @@ Untested - contributions welcomed
 - `page_load_wait_time` how long to wait for CloudFlare bot detection when first hitting numbers web page
 
 
-## Current Limitations - 
-- Browser window must be full screen and can't be run in the background
-- Would be better to have this packaged for non technical users
+
 
