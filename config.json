@@ -1,4 +1,6 @@
 {
+  
+  "user_data_path": "--user-data-dir=C:\\Users\\james\\AppData\\Local\\Google\\Chrome\\User Data\\Default",
   "url": "https://1920.in",
   "messages": [
     "Уважаемые россияне, ваши СМИ подвергаются цензуре. Кремль лжет. Тысячи ваших солдат и украинских братьев гибнут на Украине. Узнайте правду в свободном Интернете и в приложении Telegram. Время свергнуть диктатора Путина!",
@@ -8,9 +10,11 @@
     "Ваши СМИ подвергаются цензуре. Кремль лжет. Ищите правду о войне в Украине в TOR: https://www.bbcnewsd73hkzno2ini43t4gblxvycyac5aw4gnv7t2rccijh7745uqd.onion/russian или используйте приложение Psiphon.",
     "Уважаемые россияне, ваши СМИ подвергаются цензуре. Кремль лжет. Узнайте правду об Украине в бесплатном Интернете и в приложении Telegram. Время свергнуть диктатора Путина!"
   ],
-  "wait_time": 14,
-  "tab_close": true,
-  "close_time": 3,
-  "number_refresh_wait": 1,
-  "page_load_wait_time": 6
+  "img_path": "", 
+  "number_refresh_wait": 4,
+  "page_load_wait_time": 9,
+  "open_wait": 30,
+  "click_wait": 2
 }
+
+
