@@ -1,5 +1,6 @@
 # Propawhat
 
+
 ## WARNING - If lots of recipients report you, your WhatsApp account will be blocked. Best to use a throwaway simcard or virtual/e-sim from an online service
 
 We the people of the world have a message to the Russian nation.
@@ -10,8 +11,11 @@ However, nearly 150 million Russians do not know the truth about the causes or c
 It is possible for each of us to convey a direct message to the inhabitants of this enslaved country.
 
 This is a script that makes use of [squad303](https://twitter.com/squad3o3)'s api for retrieving randomly selected Russian phone numbers. 
+
 It retrieves the phone numbers from squad303's api and then sends messages using Selenium and WhatsApp Web.
 It also supports sending images.
+t to open Whatsapp Web in the browser, automatically populate the recipient and message and then send the message
+
 
 Let them know the truth. Let them know the power of the free world!
 
@@ -49,6 +53,7 @@ to whatever is after the last forward slash. In my case it was `/home/<usr name>
 
 ## Install on Windows
 Untested - contributions welcomed
+
 I think there may be some issues with the img sending because of different types of slashes between Windows and Linux but
 I haven't tested
 
@@ -68,7 +73,3 @@ see Setting Up Chrome profile section for more info
 - `img_enabled` is to enable/disable sending images, see Images section for more info
 - `open_wait` is how long to wait before sending message after opening Whatsapp Web (random +- 2s)
 - `click_wait` how long to wait between clicks when sending Whatsapp message
-
-
-
-

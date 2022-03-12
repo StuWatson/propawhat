@@ -75,7 +75,6 @@ class Propawhatsapp():
                 sys.exit()
             self.send_message(number)
 
-
 if __name__ == '__main__':
     prop = Propawhatsapp()
     prop.run_loop()
