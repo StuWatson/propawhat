@@ -25,10 +25,24 @@ You need [tkinter](https://docs.python.org/3/library/tkinter.html)
 You need [Selenium Chromedriver](https://tecadmin.net/setup-selenium-chromedriver-on-ubuntu/). Only up to step 3 
 (SeleniumServer not required)
 
+### Setting up chrome profile
+- Create a custom Chrome profile
+
+- Log into Whatsapp Web in your chrome profile: [Whatsapp Web](https://web.whatsapp.com/)
+
+NOTE: I had a lot of problems getting selenium to use a chrome profile. In order to make it happen I had to copy my user
+dir from `/home/<usr name>/.config/google-chrome` to the project directory, then set the `user_data_dir` to the directory in
+the project, and the `profile_directory` to the name of the profile that Chrome created for me. You will find this if you
+open chrome with your new profile, navigate to `chrome://version` and look for the "Profile Path" value. Set `profile_directory`
+to whatever is after the last forward slash. In my case it was `/home/<usr name>/.config/google-chrome/Profile 3` so I did as follows:
+- copy `/home/<usr name>/.config/google-chrome` to a `google-chrome` in my project root
+- set `user_data_path` in `config.json to `/google-chrome`
+- set `profile_directory` in `config.json` to `Profile 3`
+
+### Install Dependencies
 `pip install -r requirements.txt`
 
-Log into Whatsapp Web in your primary browser: [Whatsapp Web](https://web.whatsapp.com/)
-
+### Run
 `python main.py`
 
 ## Install on Windows
