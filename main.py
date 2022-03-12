@@ -1,46 +1,68 @@
 import json
 import logging
+import os
 import sys
-
-import pywhatkit
 import random
 import time
-import undetected_chromedriver.v2 as uc
+import requests
 from selenium.webdriver.common.by import By
-
-with open('config.json') as config_file:
-    config = json.load(config_file)
+from selenium import webdriver
+from selenium.webdriver import ChromeOptions
 
 
 class Propawhatsapp():
     def __init__(self):
-        self.driver = uc.Chrome()
-        self.driver.get(config['url'])
-        time.sleep(config['page_load_wait_time'])
+        with open('config.json', "r", encoding="utf-8") as config_file:
+            self.config = json.load(config_file)
+        chrome_options = ChromeOptions()
+        chrome_options.add_argument(f'--user-data-dir={self.config["user_data_path"]}')
+        chrome_options.add_argument("--disable-extensions")
+        chrome_options.add_argument(f'--profile-directory={self.config["profile_directory"]}')
+        self.driver = webdriver.Chrome(options=chrome_options)
 
     def get_phone_number(self):
-        refreshButton = self.driver.find_element(By.ID, 'buttonReload')
-        refreshButton.click()
-        time.sleep(config['number_refresh_wait'])
+        resp = requests.get(self.config['url'])
 
-        number_tag = self.driver.find_element(By.ID, 'phoneNumber')
-        number_text = number_tag.text
-        number = number_text[1:]
+        number = resp.text
 
         return number
 
+    def attach_image(self):
+        attach_button = self.driver.find_element(By.XPATH, '//span[@data-icon="clip"]')
+        attach_button.click()
+        time.sleep(self.config['click_wait'])
+
+        image_button = self.driver.find_element(By.XPATH, '//span[@data-icon="attach-image"]')
+        image_button.click()
+        time.sleep(self.config['click_wait'])
+
+        image_box = self.driver.find_element(By.XPATH,
+                                             '//input[@accept="image/*,video/mp4,video/3gpp,video/quicktime"]')
+
+        img_path = random.choice(os.listdir("./img"))
+        file_path = os.path.abspath(f'./img/{img_path}')
+        image_box.send_keys(file_path)
+        time.sleep(self.config['click_wait'])
+
     def send_message(self, number):
-        text = random.choice(config['messages'])
+        text = random.choice(self.config['messages'])
 
         try:
-            pywhatkit.sendwhatmsg_instantly(f'+{number}',
-                                            text,
-                                            config['wait_time'] + random.randint(-2, 2),
-                                            config['tab_close'],
-                                            config['close_time'] + random.randint(-2, 2))
+            url = "https://web.whatsapp.com/send?phone=" + number + "&text=" + text
+
+            self.driver.get(url)
+            time.sleep(self.config['open_wait'] + random.randint(-2, 2))
+
+            if self.config['img_enabled']:
+                self.attach_image()
+
+            send_button = self.driver.find_element(By.XPATH, '//span[@data-icon="send"]')
+            send_button.click()
+            time.sleep(self.config['click_wait'])
 
             logging.info("Successful, moving on.")
-        except:
+        except Exception as e:
+            logging.error(e)
             logging.error("Unable to send message, trying next number")
 
     def run_loop(self):
@@ -53,9 +75,6 @@ class Propawhatsapp():
                 sys.exit()
             self.send_message(number)
 
-
-
-prop = Propawhatsapp()
-prop.run_loop()
-
-
+if __name__ == '__main__':
+    prop = Propawhatsapp()
+    prop.run_loop()
