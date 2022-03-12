@@ -45,6 +45,9 @@ to whatever is after the last forward slash. In my case it was `/home/<usr name>
 - set `user_data_path` in `config.json to `/google-chrome`
 - set `profile_directory` in `config.json` to `Profile 3`
 
+A few times I got an error messaging saying the `user_data_dir` was already in use. I resolved this by killing all chrome
+and chrome driver related processes and trying again.
+
 ### Install Dependencies
 `pip install -r requirements.txt`
 
