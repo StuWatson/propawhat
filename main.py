@@ -21,7 +21,7 @@ class Propawhatsapp():
         self.driver = webdriver.Chrome(options=chrome_options)
 
     def get_phone_number(self):
-        resp = requests.get("https://api.1920.in")
+        resp = requests.get(self.config['url'])
 
         number = resp.text
 

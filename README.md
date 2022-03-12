@@ -1,5 +1,7 @@
 # Propawhat
 
+## WARNING - If lots of recipients report you, your WhatsApp account will be blocked. Best to use a throwaway simcard or virtual/e-sim from an online service
+
 We the people of the world have a message to the Russian nation.
 A nation that is to pay a huge price because of the shameful decision of the dictator Putin to attack an independent Ukraine by armed forces. The joint action of all the states of the free world, as a response to Russia’s aggression, will lead to the collapse of the entire country.
 
@@ -8,8 +10,8 @@ However, nearly 150 million Russians do not know the truth about the causes or c
 It is possible for each of us to convey a direct message to the inhabitants of this enslaved country.
 
 This is a script that makes use of [squad303](https://twitter.com/squad3o3)'s api for retrieving randomly selected Russian phone numbers. 
-It used Selenium to retrieve the phone numbers.
-It uses pywhatkit to open Whatsapp Web in the browser, automatically populate the recipient and message and then send the message
+It retrieves the phone numbers from squad303's api and then sends messages using Selenium and WhatsApp Web.
+It also supports sending images.
 
 Let them know the truth. Let them know the power of the free world!
 
@@ -47,21 +49,25 @@ to whatever is after the last forward slash. In my case it was `/home/<usr name>
 
 ## Install on Windows
 Untested - contributions welcomed
+I think there may be some issues with the img sending because of different types of slashes between Windows and Linux but
+I haven't tested
+
+## Images
+If you set `img_enabled` to `true` in `config.json`, the script will pick an image at random from the `/img` folder and send it with your message.
+You can add as many images as you want to `/img` with any filenames - it will list the dir and then choose one at random.
 
 ## Current Limitations/Notes - 
-- Browser window must be full screen and can't be run in the background
 - Your Whatsapp account may be banned after some hours of use, so best to use a virtual phone number/e sim or only work with small batches of varying message content
-- Would be better to have this packaged for non technical users
 
 ## Configuration
 `config.json` allows you to configure the paramters of the script
+- `user_data_path` and `profile_directory` point Selenium to your Chrome Profile (with Whatsapp already logged in)
+see Setting Up Chrome profile section for more info
 - `url` is the url from which to retrieve the phone numbers
 - `messages` is a list of message content texts that are chosen at random for each message
-- `wait_time` is how long to wait before sending message after opening Whatsapp Web (random +- 2s)
-- `tab_close` boolean, whether or not to close the tab after sending
-- `close_time` how long to wait after sending before closing the tab (random +- 2s)
-- `number_refresh_wait` how long to wait after clicking refresh number. You may have to increase this during high traffic/DDoS
-- `page_load_wait_time` how long to wait for CloudFlare bot detection when first hitting numbers web page
+- `img_enabled` is to enable/disable sending images, see Images section for more info
+- `open_wait` is how long to wait before sending message after opening Whatsapp Web (random +- 2s)
+- `click_wait` how long to wait between clicks when sending Whatsapp message
 
 
 
