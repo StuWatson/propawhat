@@ -76,3 +76,11 @@ see Setting Up Chrome profile section for more info
 - `img_enabled` is to enable/disable sending images, see Images section for more info
 - `open_wait` is how long to wait before sending message after opening Whatsapp Web (random +- 2s)
 - `click_wait` how long to wait between clicks when sending Whatsapp message
+
+# Propamail
+## THIS SECTION IS CURRENTLY WIP.
+Email sending should be functional but is currently untested
+
+`python propaemail.py`
+
+Configure smtp server details in `mail_config.json`
